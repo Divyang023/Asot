@@ -1,7 +1,7 @@
 // Google Map Initialization
 function initMap() {
     // Location of the company
-    const location = { lat: 21.42679190411347, lng: 72.86067520483434}; // Example coordinates (India)
+    const location = { lat: 21.42679190411347, lng: 72.86067520483434 }; // Example coordinates (India)
 
     // Create a map centered on the location
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -17,28 +17,44 @@ function initMap() {
     });
 }
 
-// Optional: Animation for the Contact Form and Map on Scroll
-window.addEventListener('scroll', function() {
+// Throttle function to limit how frequently the scroll event fires
+function throttle(callback, delay) {
+    let timeout;
+    return function() {
+        if (timeout) return;
+        timeout = setTimeout(() => {
+            callback();
+            timeout = null;
+        }, delay);
+    };
+}
+
+// Function to handle the scroll event
+function handleScroll() {
     const sections = document.querySelectorAll('.animated-section');
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
+        if (rect.top < window.innerHeight && !section.classList.contains('fadeUp')) {
             section.classList.add('fadeUp');
         }
     });
-});
+}
 
-let throttleTimeout;
-window.addEventListener('scroll', function() {
-    if (throttleTimeout) return;
-    throttleTimeout = setTimeout(() => {
-        const sections = document.querySelectorAll('.animated-section');
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top < window.innerHeight) {
-                section.classList.add('fadeUp');
-            }
-        });
-        throttleTimeout = null;
-    }, 200);
-});
+// Set up the throttled scroll handler
+const throttledScroll = throttle(handleScroll, 200);
+
+// Listen to the scroll event
+window.addEventListener('scroll', throttledScroll);
+
+// Optional: Initialize map when it's visible (for performance)
+const mapElement = document.getElementById("map");
+const mapObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            initMap(); // Initialize map only when it comes into view
+            mapObserver.disconnect(); // Stop observing once the map is initialized
+        }
+    });
+}, { threshold: 0.1 });
+
+mapObserver.observe(mapElement);
