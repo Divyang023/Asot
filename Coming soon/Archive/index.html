@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASOT Solar</title>
+    <style>
+      @font-face {
+        font-family: "GradientGothic-Regular";
+        font-style: normal;
+        font-weight: bold;
+        src: local("GradientGothic-Regular"),
+          url("GradientGothic-Regular.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "GradientGothic-Regular-Bold";
+        font-style: normal;
+        font-weight: bolder;
+        src: local("GradientGothic-Regular"),
+          url("GradientGothic-Regular.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: "GradientGothic-Bold";
+        font-style: normal;
+        font-weight: bolder;
+        src: local("GradientGothic-Bold"),
+          url("GradientGothic-Bold.otf") format("opentype");
+      }
+
+      body {
+        background: url("web_bg_with_solar_2.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        position: relative;
+        font-family: "GradientGothic-Regular";
+        overflow: hidden;
+        background-size: 100vw 100vh;
+      }
+
+      a {
+        color: #232020;
+        text-decoration: none;
+      }
+
+      .maindiv {
+        max-width: 50vw;
+        margin-top: 5%;
+        margin-left: 5%;
+        position: relative;
+      }
+
+      .launchdiv p {
+        width: max-content;
+        background-color: #232020;
+        color: #e5f4ed;
+        padding: 5px 15px;
+        margin-top: 10%;
+        border-radius: 20px;
+      }
+
+      .introdiv {
+        margin-top: 3%;
+      }
+
+      .introdiv label {
+        width: max-content;
+        color: rgb(196, 141, 40);
+        margin-top: 30px;
+        font-size: 60px;
+        font-family: "GradientGothic-Bold";
+      }
+
+      .introdiv1 p {
+        width: 100%;
+        margin-top: 5%;
+      }
+
+      .linkedindiv {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 15%;
+        font-family: "GradientGothic-Regular-Bold";
+        font-weight: bold;
+      }
+
+      .linkedindiv a {
+        color: #232020;
+        text-decoration: underline;
+      }
+
+      .inquirydiv {
+        position: fixed;
+        bottom: 3%;
+      }
+
+      .inquirydiv p {
+        width: 100%;
+        margin-top: 8%;
+        color: #000000;
+        font-family: "GradientGothic-Regular-Bold";
+      }
+
+      @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        body {
+          background: url("mobile_bg_with_solar_2.png") no-repeat center center
+            fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+          position: relative;
+          font-family: "GradientGothic-Regular";
+          overflow: hidden;
+          background-size: 100vw 100vh;
+          position: relative;
+        }
+
+        .maindiv {
+          max-width: 100vw;
+          margin-top: 5%;
+          margin-left: 0;
+          text-align: center;
+          text-wrap: balance; /* check for this*/
+          overflow: hidden;
+        }
+
+        .launchdiv {
+          display: flex;
+          justify-content: center;
+        }
+
+        .launchdiv p {
+          width: max-content;
+          background-color: #232020;
+          color: #e5f4ed;
+          padding: 5px 15px;
+          border-radius: 20px;
+          font-size: 12px;
+          margin-top: 3%;
+        }
+
+        .introdiv {
+          margin-top: 3%;
+        }
+
+        .introdiv label {
+          width: max-content;
+          color: rgb(196, 141, 40);
+          margin-top: 30px;
+          font-size: 45px;
+          font-family: "GradientGothic-Bold";
+        }
+
+        .introdiv1 p {
+          width: 100%;
+          margin-top: 5%;
+          font-size: 12px;
+        }
+
+        .linkedindiv {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          margin-top: 5%;
+          font-family: "GradientGothic-Regular-Bold";
+          font-weight: bold;
+          font-size: 12px;
+        }
+
+        .linkedindiv a {
+          color: #232020;
+          text-decoration: underline;
+        }
+
+        .inquirydiv {
+          position: fixed;
+          bottom: 1%;
+          width: 100%;
+        }
+
+        .inquirydiv p {
+          width: 100%;
+          margin-top: 8%;
+          color: #000000;
+          font-family: "GradientGothic-Regular-Bold";
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="maindiv">
+      <div>
+        <img src="web_logo.png" width="30%" height="100%" />
+      </div>
+      <div class="launchdiv">
+        <p>We're working hard to bring you a better experience.</p>
+      </div>
+      <div class="introdiv">
+        <label>Launching soon!</label>
+      </div>
+      <div class="introdiv1">
+        <p>
+          We specialize in manufacturing high-quality, reliable solar TOPCon
+          modules with N-Type Cells that power sustainable energy solutions.
+        </p>
+      </div>
+      <div class="linkedindiv">
+        You can connect with us on
+        <a href="https://www.linkedin.com/company/asotsolar/">
+          <img src="web_linkedin.png" width="30px" height="30px" />
+        </a>
+      </div>
+      <div class="inquirydiv">
+        <p>
+          For any inquiries or more information, feel free to
+          <strong>contact us</strong> at
+          <strong
+            ><a href="mail:info@asotsolar.com">info@asotsolar.com</a></strong
+          >
+          or
+          <a href="tel: +919723444434"><strong>+919723444434</strong></a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
